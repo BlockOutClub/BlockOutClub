@@ -1,20 +1,21 @@
-'use client';
+import { BOC404 } from '@components/svgs/boc404';
 
-export default function Home() {
+export default function NotFound() {
   return (
     <main className='flex flex-col items-center justify-between'>
       <section className='flex flex-col container mx-auto w-full h-screen jusitfy-center items-center my-auto align-middle'>
         <div className='my-auto md:h-auto h-full w-full justify-center items-center flex flex-col'>
-          <h1 className='text-7xl font-black'>In Development</h1>
-
-          <div className='pt-5 text-md md:text-xl font-mono inline-flex gap-6'>
+          <div className='pb-3'>
+            <BOC404 />
+          </div>
+          <div className='text-md md:text-xl font-mono underline inline-flex gap-6'>
+            <h6>#404</h6>
             <h6>#block2024</h6>
             <h6>#FreePalestine🇵🇸</h6>
           </div>
-          <p className='pt-10 text-center sm:w-3/4 lg:w-1/2'>
-            'Block Out Club' web-app facilitates the blocking of celebrities who
-            do not voice support or acknowledgment for the ongoing humanitarian
-            crisis in Palestine.
+          <p className='pt-16 text-center sm:w-3/4 lg:w-1/2'>
+            The page you are looking for was moved, removed, renamed or might
+            never existed!
           </p>
         </div>
       </section>

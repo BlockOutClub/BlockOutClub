@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import './globals.css';
 
 import { Providers } from './providers';
-import { Footer } from '@root/components/footer';
-
-import './globals.css';
+import { Header } from '@root/components/header';
+import { Footer } from '@components/footer';
 
 export const metadata: Metadata = {
   title: 'Block Out Club #blockout2024',
@@ -32,6 +32,7 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className='bg-neutral-100 dark:bg-neutral-950'>
         <Providers>
+          <Header />
           {children}
           <Footer />
         </Providers>

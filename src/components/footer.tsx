@@ -8,7 +8,7 @@ import Link from 'next/link';
 import ThemeSwitch from '@components/themeSwitch';
 
 import { LIB_VERSION } from '@root/version';
-import { BOCLogo } from './svgs/boc';
+import { Boc } from './svgs/boc';
 
 type Props = {};
 
@@ -39,7 +39,7 @@ export const Footer: React.FC<Props> = (_props) => {
       <div className='container mx-auto'>
         <div className='flex justify-between items-center pb-2'>
           <Link className='hover:text-[--accent-active]' href='/'>
-            <BOCLogo />
+            <Boc />
           </Link>
 
           <ul className='inline-flex gap-4 text-black/[.5] dark:text-white/[.5]'>
@@ -135,7 +135,7 @@ export const Footer: React.FC<Props> = (_props) => {
             </div>
             <div className='mt-5'>
               <p className='text-black/[.6] dark:text-white/[.6] font-bold'>
-                Copyright © {currentYear} AbdulKaiz Khatri
+                Copyright © {currentYear} Block Out Club
               </p>
             </div>
           </div>
