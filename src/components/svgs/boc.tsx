@@ -4,14 +4,10 @@ type Props = {};
 export const Boc: React.FC<Props> = (_props) => {
   return (
     <svg
-      className='w-16'
+      className='w-16 bg-black dark:bg-white rounded-lg'
       viewBox='0 0 85 47'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'>
-      <path
-        d='M0.75 10.25C0.75 4.72715 5.22715 0.25 10.75 0.25H74.25C79.7728 0.25 84.25 4.72715 84.25 10.25V36.75C84.25 42.2728 79.7728 46.75 74.25 46.75H10.75C5.22715 46.75 0.75 42.2728 0.75 36.75V10.25Z'
-        className='fill-black dark:fill-white'
-      />
       <path
         fill-rule='evenodd'
         clip-rule='evenodd'

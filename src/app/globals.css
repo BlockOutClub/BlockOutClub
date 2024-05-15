@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .react-select-container .react-select__control {
+    @apply bg-white dark:bg-neutral-900 py-2 border rounded-2xl border-neutral-300 dark:border-neutral-700 hover:border-neutral-900 dark:hover:border-neutral-500;
+  }
+
+  .react-select-container .react-select__control--is-focused {
+    @apply border-neutral-500 hover:border-neutral-500 dark:border-neutral-400 dark:hover:border-neutral-400 shadow-none;
+  }
+
+  .react-select-container .react-select__menu {
+    @apply p-2 bg-neutral-100 dark:bg-neutral-900 rounded-2xl border-neutral-900/[.4] dark:border-neutral-100/[.4];
+  }
+
+  .react-select-container .react-select__option {
+    @apply p-2 rounded-xl text-neutral-600 dark:text-neutral-200  hover:bg-neutral-200 bg-transparent dark:hover:bg-neutral-800;
+  }
+
+  .react-select-container .react-select__indicator-separator {
+    @apply bg-neutral-400;
+  }
+
+  .react-select-container .react-select__input-container,
+  .react-select-container .react-select__placeholder,
+  .react-select-container .react-select__single-value {
+    @apply text-neutral-600 dark:text-neutral-200;
+  }
+
+  .react-select-container .react-select__clear-indicator,
+  .react-select-container .react-select__multi-value {
+    @apply text-red-400/[.7] hover:text-red-500;
+  }
+}

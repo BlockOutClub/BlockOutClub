@@ -7,8 +7,11 @@ import Link from 'next/link';
 
 import ThemeSwitch from '@components/themeSwitch';
 
+import { Boc } from '@components/svgs/boc';
+import { GithubLogo } from '@components/svgs/github';
+import { XLogo } from '@components/svgs/x';
+
 import { LIB_VERSION } from '@root/version';
-import { Boc } from './svgs/boc';
 
 type Props = {};
 
@@ -49,7 +52,7 @@ export const Footer: React.FC<Props> = (_props) => {
                 target='_blank'
                 className='hover:underline'
                 rel='noopener noreferrer'>
-                GitHub
+                <GithubLogo />
               </Link>
             </li>
 
@@ -59,7 +62,7 @@ export const Footer: React.FC<Props> = (_props) => {
                 target='_blank'
                 className='hover:underline'
                 rel='noopener noreferrer'>
-                X
+                <XLogo />
               </Link>
             </li>
           </ul>

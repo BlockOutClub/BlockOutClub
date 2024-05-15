@@ -4,7 +4,7 @@ type Props = {};
 export const BocType: React.FC<Props> = (_props) => {
   return (
     <svg
-      className='w-56'
+      className='w-44 md:w-56'
       viewBox='0 0 332 50'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'>
