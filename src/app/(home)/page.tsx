@@ -9,7 +9,7 @@ export default function Home() {
       <section className='flex flex-col container mx-auto w-full h-screen justify-center items-center'>
         <div className='my-auto md:h-auto h-full w-full justify-center items-center flex flex-col'>
           <h1 className='text-5xl md:text-6xl font-black'>
-            Speak For Palestine
+            Raise Voice For Palestine
           </h1>
 
           <div className='pt-5 text-md md:text-xl font-mono inline-flex gap-6'>

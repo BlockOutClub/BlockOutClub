@@ -16,7 +16,7 @@
   }
 
   .react-select-container .react-select__option {
-    @apply p-2 rounded-xl text-neutral-600 dark:text-neutral-200  hover:bg-neutral-200 bg-transparent dark:hover:bg-neutral-800;
+    @apply p-2 rounded-xl text-black dark:text-white hover:bg-neutral-200 bg-transparent dark:hover:bg-neutral-800;
   }
 
   .react-select-container .react-select__indicator-separator {
@@ -26,11 +26,15 @@
   .react-select-container .react-select__input-container,
   .react-select-container .react-select__placeholder,
   .react-select-container .react-select__single-value {
-    @apply text-neutral-600 dark:text-neutral-200;
+    @apply text-black dark:text-white;
   }
 
   .react-select-container .react-select__clear-indicator,
   .react-select-container .react-select__multi-value {
-    @apply text-red-400/[.7] hover:text-red-500;
+    @apply text-red-400/[.7] hover:text-red-500 rounded-xl;
+  }
+
+  .react-select-container .react-select__multi-value {
+    @apply bg-neutral-200 dark:bg-neutral-100;
   }
 }
