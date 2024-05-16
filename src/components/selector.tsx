@@ -233,37 +233,43 @@ export const Selector = () => {
             isMulti
             getOptionLabel={(user) => user.name}
             getOptionValue={(user) => user.id}
-            formatOptionLabel={(user) => (
-              <div className='flex items-center p-4 border rounded-xl dark:border-white/[.1]'>
-                <img
-                  className='w-20 rounded-3xl mr-5'
-                  src={user.avatar_url}
-                  alt={user.name}
-                />
-                <div>
-                  <h5 className='font-bold'>{user.name}</h5>
-                  <div className='mt-1 inline-flex items-center gap-2'>
-                    {user.platform.toLowerCase() === 'instagram' ? (
-                      <Instagram />
-                    ) : user.platform.toLowerCase() === 'twitter' ? (
-                      <X />
-                    ) : (
-                      <Facebook />
-                    )}
-                    <Link
-                      className='text-sm font-mono hover:underline'
-                      href='https://example.com'>
-                      {user.username}
-                    </Link>
-                  </div>
-                  {user?.tag && (
-                    <div className='mt-1 bg-red-400 text-xs rounded-lg px-2 text-center font-bold py-1'>
-                      <p>{user.tag}</p>
+            formatOptionLabel={(user, { context }) => {
+              if (context === 'menu') {
+                return (
+                  <div className='flex items-center p-4 border rounded-xl dark:border-white/[.1]'>
+                    <img
+                      className='w-20 rounded-3xl mr-5'
+                      src={user.avatar_url}
+                      alt={user.name}
+                    />
+                    <div>
+                      <h5 className='font-bold'>{user.name}</h5>
+                      <div className='mt-1 inline-flex items-center gap-2'>
+                        {user.platform.toLowerCase() === 'instagram' ? (
+                          <Instagram />
+                        ) : user.platform.toLowerCase() === 'twitter' ? (
+                          <X />
+                        ) : (
+                          <Facebook />
+                        )}
+                        <Link
+                          className='text-sm font-mono hover:underline'
+                          href='https://example.com'
+                          target='_blank'>
+                          {user.username}
+                        </Link>
+                      </div>
+                      {user?.tag && (
+                        <div className='mt-1 bg-red-400 text-xs rounded-lg px-2 text-center font-bold py-1'>
+                          <p>{user.tag}</p>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              </div>
-            )}
+                  </div>
+                );
+              }
+              return user.name;
+            }}
           />
         </div>
         <div className='flex justify-between gap-4 py-5 md:py-0'>

@@ -13,8 +13,9 @@ export default function Home() {
           </h1>
 
           <div className='pt-5 text-md md:text-xl font-mono inline-flex gap-6'>
-            <h6>#block2024</h6>
-            <h6>#FreePalestine🇵🇸</h6>
+            <p>#block2024</p>
+            <p>#ArmyToAqsa🕌</p>
+            <p>#FreePalestine🇵🇸</p>
           </div>
           <p className='pt-10 text-center sm:w-3/4 lg:w-1/2 text-sm md:text-lg'>
             'Block Out Club' web-app facilitates the blocking of celebrities who

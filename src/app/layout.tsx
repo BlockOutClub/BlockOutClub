@@ -1,12 +1,17 @@
 import type { Metadata } from 'next';
 
-import { GeistSans } from 'geist/font/sans';
+import { Sora } from 'next/font/google';
 import { GeistMono } from 'geist/font/mono';
+
 import './globals.css';
 
 import { Providers } from './providers';
 import { Header } from '@root/components/header';
 import { Footer } from '@components/footer';
+
+const sora = Sora({
+  subsets: ['latin']
+});
 
 export const metadata: Metadata = {
   title: 'Block Out Club #blockout2024',
@@ -29,7 +34,7 @@ export default function RootLayout({
     <html
       suppressHydrationWarning
       lang='en'
-      className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      className={`${sora.className} ${GeistMono.variable}`}>
       <body className='bg-neutral-100 dark:bg-neutral-950'>
         <Providers>
           <Header />
