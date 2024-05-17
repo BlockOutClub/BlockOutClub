@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
-interface Props {}
+type Props = {};
 
+// eslint-disable-next-line no-unused-vars
 export const ThemeSwitch: React.FC<Props> = (_props) => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();

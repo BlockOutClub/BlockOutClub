@@ -1,15 +1,13 @@
 'use client';
 
 import React from 'react';
-
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-
-import ThemeSwitch from '@components/themeSwitch';
+import { usePathname } from 'next/navigation';
 
 import { Boc } from '@components/svgs/boc';
 import { GithubLogo } from '@components/svgs/github';
 import { XLogo } from '@components/svgs/x';
+import ThemeSwitch from '@components/themeSwitch';
 
 import { LIB_VERSION } from '@root/version';
 

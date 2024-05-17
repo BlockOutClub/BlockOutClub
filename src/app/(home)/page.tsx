@@ -1,9 +1,17 @@
-// Home.tsx
 'use client';
+
+import { useState } from 'react';
+import { MultiValue } from 'react-select';
 
 import { Selector } from '@components/selector';
 
+import users from '@data/users.json';
+
+import { User } from 'boc';
+
 export default function Home() {
+  const [selectedList, setSelectedList] = useState<MultiValue<User>>([]);
+
   return (
     <main className='flex flex-col items-center justify-between'>
       <section className='flex flex-col container mx-auto w-full h-screen justify-center items-center'>
@@ -29,7 +37,11 @@ export default function Home() {
         <h1 className='text-5xl md:text-6xl font-bold p-5 text-center'>
           Filter & Block
         </h1>
-        <Selector />
+        <Selector
+          list={users}
+          selected={selectedList}
+          setSelected={setSelectedList}
+        />
       </div>
     </main>
   );

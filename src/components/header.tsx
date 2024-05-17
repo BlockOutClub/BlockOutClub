@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
-import { BocType } from './svgs/bocType';
 import Link from 'next/link';
+
+import { BocType } from './svgs/bocType';
 
 type Props = {};
 
