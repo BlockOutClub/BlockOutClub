@@ -8,5 +8,9 @@ declare module 'boc' {
     keywords: string[];
     tag?: string;
   }
-}
 
+  type MessageObj = {
+    text: string;
+    [k: string]: any;
+  };
+}

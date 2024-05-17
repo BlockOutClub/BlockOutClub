@@ -11,7 +11,7 @@ type Props = {};
 export const Header: React.FC<Props> = (_props) => {
   return (
     <div className='md:px-4 w-full flex justify-center'>
-      <header className='container mx-auto px-4 pt-2 md:px-0 md:pt-6 max-w-5xl fixed z-50'>
+      <header className='container mx-auto px-4 pt-2 md:px-0 md:pt-6 fixed z-50'>
         <nav className='bg-white/10 dark:bg-black/90 flex mx-auto items-center justify-between border-[1px] border-black/10 dark:border-white/10 bg-gradient-to-br from-white/5 to-white/5 backdrop-blur-lg md:rounded-2xl rounded-lg px-4 md:px-5 shadow py-2 md:py-3'>
           <a href='/'>
             <div className='py-2 md:py-4'>
