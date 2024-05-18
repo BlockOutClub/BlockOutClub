@@ -4,6 +4,28 @@ import React from 'react';
 import Link from 'next/link';
 
 import { BocType } from './svgs/bocType';
+import { useSession } from 'next-auth/react';
+
+export const UserProfile: React.FC = () => {
+  const { data, status } = useSession();
+
+  switch (status) {
+    case 'unauthenticated':
+      return <pre className='font-mono text-xs p-2 border'>Not signed in</pre>;
+
+    case 'authenticated':
+      return (
+        <pre className='font-mono text-xs p-2 border'>
+          Signed in as {JSON.stringify(data)}
+        </pre>
+      );
+
+    case 'loading':
+      <>Loading...</>;
+    default:
+      return null;
+  }
+};
 
 type Props = {};
 
@@ -20,14 +42,22 @@ export const Header: React.FC<Props> = (_props) => {
           </a>
           <div className='flex items-center text-sm md:text-base'>
             <Link
-              className='mr-1 text-gray-500 dark:text-gray-400 font-medium px-1.5 md:px-4 rounded-full py-2 md:py-2 transition-all ease-in-out text-xs md:text-sm scale-100 hover:scale-105 active:scale-95'
+              className='flex items-center mr-1 text-gray-500 dark:text-gray-400 font-medium px-1.5 md:px-4 rounded-full py-2 md:py-2 transition-all ease-in-out text-xs md:text-sm scale-100 hover:scale-105 active:scale-95'
               href='https://github.com/sponsors/ful1e5'
               target='_blank'>
-              Become Sponsor
+              <span className='hidden md:inline-block'>Become Sponsor</span>
+              <span className='inline-block md:hidden'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  className='w-auto mr-5 rounded-xl fill-black/[.2] dark:fill-white/[.2] p-[5px] border border-black/[.2] dark:border-white/[.2] transition-all ease-in-out hover:fill-black dark:hover:fill-white hover:border-black dark:hover:border-white'
+                  viewBox='0 0 24 24'>
+                  <path d='M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z' />
+                </svg>
+              </span>
             </Link>
             <Link
               className='px-4 md:px-5 font-medium rounded-full py-2.5 transition-transform scale-100 hover:scale-105 active:scale-95 ease-in-out bg-black dark:bg-white text-white dark:text-black text-xs md:text-sm flex items-center'
-              href='https://www.unfpa.org/donate/Gaza?form=FUNRVQMJQQQ'
+              href='https://donate.unrwa.org/gaza/~my-donation'
               target='_blank'>
               Donate to Gaza
               <span className='hidden md:inline-block ml-2 items-center text-inherit'>
@@ -46,6 +76,7 @@ export const Header: React.FC<Props> = (_props) => {
                 </svg>
               </span>
             </Link>
+            <UserProfile />
           </div>
         </nav>
       </header>

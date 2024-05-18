@@ -64,7 +64,9 @@ export const Selector: React.FC<Props> = (props) => {
             formatOptionLabel={(user, { context }) => {
               if (context === 'menu') {
                 return (
-                  <div className='flex items-center p-4 border rounded-xl dark:border-white/[.1]'>
+                  <div
+                    key={user.id}
+                    className='flex items-center p-4 border rounded-xl dark:border-white/[.1]'>
                     <img
                       className='w-20 rounded-3xl mr-5'
                       src={user.avatar_url}
@@ -166,13 +168,16 @@ export const Selector: React.FC<Props> = (props) => {
                     />
                   )}
                   <img
-                    className='w-14 h-14 rounded-xl object-cover shadow-sm'
+                    className='w-16 h-16 rounded-xl object-cover shadow-sm'
                     src={user.avatar_url}
                     alt={`${user.name}'s avatar`}
                   />
                   <div>
-                    <label className='text-sm'>{user.name}</label>
+                    <p className='text-sm'>{user.name}</p>
                     <p className='text-xs'>{user.username}</p>
+                    <label className='p-1 px-2 font-medium rounded-md text-xs bg-black text-white dark:bg-white/[.8] dark:text-black'>
+                      {user?.tag}
+                    </label>
                   </div>
                 </div>
                 <SocialIcon platform={user.platform} />
