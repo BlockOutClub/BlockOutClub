@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { MultiValue } from 'react-select';
-import { signIn } from 'next-auth/react';
 
 import { Selector } from '@components/selector';
 
@@ -30,18 +29,6 @@ export default function Home() {
             An Open Source Startup. Exposing Truth, Combatting Fake Accounts and
             Spams, Unveiling Political Agendas through Automated Data Analysis.
           </p>
-          <div className='flex pt-5 gap-6'>
-            <button
-              className='border rounded-2xl bg-black text-white border-white/[.2] text-xl'
-              onClick={() => signIn('twitter', { callbackUrl: '/' })}>
-              <div className='inline-flex gap-4'>
-                <span className='py-3 px-10 border-r pr-4 border-white/[.2]'>
-                  X
-                </span>
-                <span className='py-3 pr-10'>Connect</span>
-              </div>
-            </button>
-          </div>
         </div>
       </section>
 

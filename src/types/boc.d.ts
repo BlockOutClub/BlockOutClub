@@ -4,7 +4,7 @@ declare module 'boc' {
     name: string;
     username: string;
     platform: string;
-    avatar_url: string;
+    image: string;
     keywords: string[];
     tag?: string;
   }

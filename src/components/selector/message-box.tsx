@@ -31,7 +31,7 @@ export const MessageBox: React.FC<Props> = (props) => {
           <div className='w-full p-3 inline-flex justify-between items-center '>
             <p className='ml-2'>{props.msg.text}</p>
             <button
-              className='px-3 py-1 border rounded-full danger'
+              className='px-3 py-1 border border-gray rounded-full danger'
               onClick={() => props.setMsg({ text: '', type: '' })}>
               x
             </button>

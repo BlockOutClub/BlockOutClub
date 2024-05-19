@@ -36,7 +36,7 @@ export const Footer: React.FC<Props> = (_props) => {
   const refreshBranch = branch === 'main' ? 'dev' : 'main';
 
   return (
-    <footer className='border-t border-black/[.1] dark:border-white/[.1] p-3 mt-20'>
+    <footer className='border-t border-gray p-3 mt-20'>
       <div className='container mx-auto'>
         <div className='flex justify-between items-center pb-2'>
           <Link className='hover:text-[--accent-active]' href='/'>
@@ -123,7 +123,7 @@ export const Footer: React.FC<Props> = (_props) => {
           </div>
 
           <ThemeSwitch />
-          <div className='mt-7 pt-3 border-t border-black/[.1] dark:border-white/[.1] flex flex-col'>
+          <div className='mt-7 pt-3 border-t border-gray flex flex-col'>
             <div className='text-black/[.5] dark:text-white/[.5] w-full sm:w-3/5 text-sm'>
               <h6 className='font-black'>Privacy Policy</h6>
               <p>

@@ -2,21 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/** Remove Tap highlight from buttons **/
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  @apply bg-neutral-100 text-black dark:bg-neutral-950 dark:text-white;
+}
+
+.border-gray {
+  @apply border-black/[.1] dark:border-white/[.1];
+}
+
+.inverted {
+  @apply bg-neutral-950 text-neutral-100 dark:bg-neutral-100 dark:text-neutral-950;
+}
+
 @layer components {
   .react-select-container .react-select__control {
-    @apply bg-white dark:bg-neutral-900 py-2 border rounded-2xl border-neutral-300 dark:border-neutral-700 hover:border-neutral-900 dark:hover:border-neutral-500;
+    @apply bg-white dark:bg-neutral-900 py-2 border rounded-2xl border-black/[.2] dark:border-white/[.2] hover:border-black/[.5] dark:hover:border-white/[.5];
   }
 
   .react-select-container .react-select__control--is-focused {
-    @apply border-neutral-500 hover:border-neutral-500 dark:border-neutral-400 dark:hover:border-neutral-400 shadow-none;
+    @apply border border-black dark:border-white shadow-none;
   }
 
   .react-select-container .react-select__menu {
-    @apply p-2 bg-neutral-100 dark:bg-neutral-900 rounded-2xl border-neutral-900/[.4] dark:border-neutral-100/[.4];
+    @apply py-0 bg-neutral-100 dark:bg-neutral-800 rounded-2xl border border-black/[.2] dark:border-white/[.2] shadow-md;
   }
 
   .react-select-container .react-select__option {
-    @apply p-2 rounded-xl text-black dark:text-white hover:bg-neutral-200 bg-transparent dark:hover:bg-neutral-800;
+    @apply p-0 text-black dark:text-white hover:bg-black/[.1] bg-transparent dark:hover:bg-white/[.1];
   }
 
   .react-select-container .react-select__indicator-separator {

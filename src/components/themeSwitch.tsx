@@ -19,7 +19,7 @@ export const ThemeSwitch: React.FC<Props> = (_props) => {
 
   return (
     <button
-      className='mt-16 p-3 fill-black dark:fill-white border border-black/[.5] dark:border-white/[.5] font-semibold rounded-md'
+      className='mt-16 p-3 fill-black dark:fill-white border border-gray font-semibold rounded-md'
       onClick={() => {
         setTheme(theme === 'light' ? 'dark' : 'light');
       }}>

@@ -10,7 +10,8 @@ import { Header } from '@root/components/header';
 import { Footer } from '@components/footer';
 
 const sora = Sora({
-  subsets: ['latin']
+  subsets: ['latin'],
+  preload: true
 });
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function RootLayout({
       suppressHydrationWarning
       lang='en'
       className={`${sora.className} ${GeistMono.variable}`}>
-      <body className='bg-neutral-100 dark:bg-neutral-950'>
+      <body>
         <Providers>
           <Header />
           {children}
