@@ -2,44 +2,19 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { signIn, signOut } from 'next-auth/react';
 
-import { BocType } from './svgs/bocType';
 import { useSession } from 'next-auth/react';
 
-export const UserProfile: React.FC = () => {
-  const { data, status } = useSession();
+import { BocType } from '@components/svgs/bocType';
 
-  switch (status) {
-    case 'unauthenticated':
-      return (
-        <button
-          className='px-4 md:px-5 text-xs md:text-sm flex items-center font-medium rounded-full py-2.5 transition-transform scale-100 hover:scale-105 active:scale-95 ease-in-out inverted'
-          onClick={() => signIn('twitter', { callbackUrl: '/' })}>
-          Connect
-        </button>
-      );
-
-    case 'authenticated':
-      return (
-        <button
-          className='px-4 md:px-5 text-xs md:text-sm flex items-center font-medium rounded-full py-2.5 transition-transform scale-100 hover:scale-105 active:scale-95 ease-in-out inverted'
-          onClick={() => signOut()}>
-          Logout
-        </button>
-      );
-
-    case 'loading':
-      <>Loading...</>;
-    default:
-      return null;
-  }
-};
+import { UserProfile } from './user-profile';
 
 type Props = {};
 
 // eslint-disable-next-line no-unused-vars
 export const Header: React.FC<Props> = (_props) => {
+  const { data, status } = useSession();
+
   return (
     <div className='md:px-4 w-full flex justify-center'>
       <header className='container mx-auto px-4 pt-2 md:px-0 md:pt-6 fixed z-50'>
@@ -49,9 +24,9 @@ export const Header: React.FC<Props> = (_props) => {
               <BocType />
             </div>
           </a>
-          <div className='flex items-center gap-3 text-sm md:text-base'>
+          <div className='flex items-center gap text-sm md:text-base'>
             <Link
-              className='flex items-center mr-1 text-gray-500 dark:text-gray-400 font-medium px-1.5 md:px-4 rounded-full py-2 md:py-2 transition-all ease-in-out text-xs md:text-sm scale-100 hover:scale-105 active:scale-95'
+              className='flex items-center text-gray-500 dark:text-gray-400 font-medium px-1.5 md:px-4 rounded-full py-2 md:py-2 transition-all ease-in-out text-xs md:text-sm scale-100 hover:scale-105 active:scale-95'
               href='https://github.com/sponsors/ful1e5'
               target='_blank'>
               <span className='hidden md:inline-block'>Become Sponsor</span>
@@ -65,7 +40,7 @@ export const Header: React.FC<Props> = (_props) => {
               </span>
             </Link>
             <Link
-              className='px-4 md:px-5 text-xs md:text-sm flex items-center font-medium rounded-full py-2.5 transition-transform scale-100 hover:scale-105 active:scale-95 ease-in-out inverted'
+              className='px-4 md:px-5 text-xs md:text-sm flex items-center font-medium rounded-full py-2 animated-click border border-inverted'
               href='https://donate.unrwa.org/gaza/~my-donation'
               target='_blank'>
               Donate to Gaza
@@ -85,7 +60,9 @@ export const Header: React.FC<Props> = (_props) => {
                 </svg>
               </span>
             </Link>
-            <UserProfile />
+            <div className='ml-4'>
+              <UserProfile data={data} status={status} />
+            </div>
           </div>
         </nav>
       </header>

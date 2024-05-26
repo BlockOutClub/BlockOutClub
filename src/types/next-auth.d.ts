@@ -12,6 +12,7 @@ declare module 'next-auth' {
 
   interface User extends User {
     username?: string;
+    url: string;
   }
 
   interface Session extends Session {

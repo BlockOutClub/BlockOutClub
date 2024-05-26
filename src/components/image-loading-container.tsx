@@ -5,7 +5,7 @@ export const ImageLoadingContiner: React.FC<Props> = (_props) => {
   return (
     <div className='w-full h-full animate-pulse bg-black/[.2] dark:bg-white/[.2] flex item-center justify-center'>
       <svg
-        className='animate-spin w-6'
+        className='animate-spin w-4'
         xmlns='http://www.w3.org/2000/svg'
         fill='none'
         viewBox='0 0 24 24'>

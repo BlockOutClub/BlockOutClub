@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { SocialIcon } from './icons';
-import { ImageLoadingContiner } from './image-loading-container';
+
+import { ImageLoadingContiner } from '@components/image-loading-container';
 
 import { User } from 'boc';
 
@@ -23,7 +24,7 @@ export const UserCard: React.FC<Props> = (props) => {
         {props?.children}
         <div className='w-16 h-16 overflow-hidden shadow-sm rounded-xl ring-black/[.2] dark:ring-white/[.2] ring-1 '>
           <img
-            className={`object-cover ${loading ? 'hidden' : 'block'}`}
+            className={`object-cover ${loading ? 'hidden' : ''}`}
             width={100}
             height={100}
             src={props.user.image}

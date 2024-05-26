@@ -14,7 +14,11 @@ const handler = NextAuth({
   callbacks: {
     async jwt({ token, user, profile, trigger }) {
       if (trigger === 'signIn' && profile) {
+        user.image = user.image?.replace('_normal', '_400x400');
         user = { ...user, username: profile.data.username };
+        user.url = user.username
+          ? `https://x.com/${user.username}`
+          : 'https://x.com/BlockOutClub';
         token.user = user;
       }
       return token;

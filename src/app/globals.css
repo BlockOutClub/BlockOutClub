@@ -16,8 +16,20 @@ body {
   @apply border-black/[.1] dark:border-white/[.1];
 }
 
+.default {
+  @apply bg-neutral-100 text-neutral-950 dark:bg-neutral-950 dark:text-neutral-100;
+}
+
 .inverted {
   @apply bg-neutral-950 text-neutral-100 dark:bg-neutral-100 dark:text-neutral-950;
+}
+
+.inverted-border {
+  @apply border-white/[.1] dark:border-black/[.1];
+}
+
+.animated-click {
+  @apply transition-transform scale-100 hover:scale-105 active:scale-95 ease-in-out;
 }
 
 @layer components {
