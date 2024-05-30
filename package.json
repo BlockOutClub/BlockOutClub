@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node -p \"'export const LIB_VERSION = ' + JSON.stringify(require('./package.json').version) + ';'\" > src/version.ts",
+    "faker": "python src/faker.py",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
