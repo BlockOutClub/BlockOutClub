@@ -1,7 +1,7 @@
 type Props = {};
 
 // eslint-disable-next-line no-unused-vars
-export const ImageLoadingContiner: React.FC<Props> = (_props) => {
+export const ImageLoadingContainer: React.FC<Props> = (_props) => {
   return (
     <div className='w-full h-full animate-pulse bg-black/[.2] dark:bg-white/[.2] flex item-center justify-center'>
       <svg

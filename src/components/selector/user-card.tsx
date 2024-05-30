@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { SocialIcon } from './icons';
 
-import { ImageLoadingContiner } from '@components/image-loading-container';
+import { ImageLoadingContainer } from '@components/image-loading-container';
 
 import { User } from 'boc';
 
@@ -31,7 +31,7 @@ export const UserCard: React.FC<Props> = (props) => {
             alt={`${props.user.name}'s avatar`}
             onLoad={() => setLoading(false)}
           />
-          <ImageLoadingContiner />
+          {loading && <ImageLoadingContainer />}
         </div>
 
         <div>

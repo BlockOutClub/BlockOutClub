@@ -13,7 +13,7 @@ export default function Home() {
   const [selectedList, setSelectedList] = useState<MultiValue<User>>([]);
 
   return (
-    <main className='flex flex-col items-center justify-between'>
+    <>
       <section className='flex flex-col container mx-auto w-full h-screen justify-center items-center'>
         <div className='my-auto md:h-auto h-full w-full justify-center items-center flex flex-col'>
           <h1 className='text-5xl md:text-6xl font-black text-center'>
@@ -42,6 +42,6 @@ export default function Home() {
           setSelected={setSelectedList}
         />
       </div>
-    </main>
+    </>
   );
 }

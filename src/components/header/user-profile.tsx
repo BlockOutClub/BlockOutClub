@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Session } from 'next-auth';
 import { signIn, signOut } from 'next-auth/react';
 
-import { ImageLoadingContiner } from '@components/image-loading-container';
+import { ImageLoadingContainer } from '@components/image-loading-container';
 
 type Props = {
   status: 'authenticated' | 'loading' | 'unauthenticated';
@@ -66,7 +66,7 @@ export const UserProfile: React.FC<Props> = (props) => {
                 alt={`${data.user.name!}'s avatar`}
                 onLoad={() => setLoading(false)}
               />
-              {loading && <ImageLoadingContiner />}
+              {loading && <ImageLoadingContainer />}
             </div>
 
             {dropdownVisible && (
